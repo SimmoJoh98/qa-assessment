@@ -6,6 +6,7 @@ const {shuffleArray} = require('./utils')
 
 app.use(express.json())
 app.use(rollbar.errorHandler())
+
 // CSS, JS AND HOMEPAGE
 //-------------------------------------------------------//
 app.get('/', (req, res) => {
