@@ -5,7 +5,6 @@ const {bots, playerRecord} = require('./data')
 const {shuffleArray} = require('./utils')
 
 app.use(express.json())
-app.use(rollbar.errorHandler())
 
 // CSS, JS AND HOMEPAGE
 //-------------------------------------------------------//
@@ -29,7 +28,7 @@ const rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log("Hello world!");
-
+app.use(rollbar.errorHandler())
 //------------------------------------------------------//
 app.get('/api/robots', (req, res) => {
     try {
