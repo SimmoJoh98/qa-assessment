@@ -37,6 +37,9 @@ app.get('/api/robots', (req, res) => {
         console.log('ERROR GETTING BOTS', error)
         res.sendStatus(400)
         rollbar.warning(error)
+        rollbar.info(error)
+        rollbar.critical(error)
+        rollbar.error(error)
     }
 })
 
